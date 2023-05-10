@@ -8,14 +8,26 @@ AreaEspera::~AreaEspera(){}
 void AreaEspera::altaPrioridad() {
 	string id;
 	cin >> id;
-	Prioridad::alta(id);
+	if (Prioridad::existe(id)){
+		cout << "La prioridad ya existe" << endl;
+	}
+	else {
+		Prioridad *p = Prioridad::alta(id);
+		prioridades.insert(p);
+		Prioridad::imprimirTodo();
+	}
 }
 
 void AreaEspera::bajaPrioridad() {
 	string id;
 	cin >> id;
 	Prioridad *p = Prioridad::getPrioridad(id);
-	if (p != nullptr) {
+	if (p == nullptr) {
+		cout << "La prioridad no existe" << endl;
+	}
+	else {
 		prioridades.erase(p);
-		*p.baja();
+		p->baja();
+		Prioridad::imprimirTodo();
+	}
 }

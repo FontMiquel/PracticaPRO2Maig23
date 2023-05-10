@@ -1,6 +1,7 @@
 
 class Cluster {
 private:
+	//Relaciones
 	Procesador* raiz;
 
 public:
@@ -8,4 +9,5 @@ public:
 	~Cluster();
 
 	void inicializa();
+	void elimina();
 };

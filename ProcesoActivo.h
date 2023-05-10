@@ -1,9 +1,14 @@
 
 class ProcesoActivo : public Proceso {
 private:
-	Procesador* procesador;
+	//Atributos
 	unsigned int ttl;
-	static set<ProcesoActivo*> procesosActivos;
+
+	//Relaciones
+	Procesador* procesador;
+
+	//Clave externa: pid + Procesador::id
+	static map<pair<int,string>, ProcesoActivo*> procesosActivos; 
 	
 public:
 	ProcesoActivo();

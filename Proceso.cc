@@ -1,3 +1,4 @@
 #include "Proceso.h"
 
-set<Proceso> Proceso::procesos;
+Proceso::Proceso();
+Proceso::~Proceso();
