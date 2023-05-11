@@ -13,10 +13,16 @@ public:
 	ProcesoPendiente() : Proceso() {};
 	~ProcesoPendiente();
 	
+	// Alta --------------------------------
+
 	static ProcesoPendiente* alta(const unsigned int pid, const unsigned int memoria_estimada,
 					 	   		  const unsigned int ttl_estimado, const string& idPrioridad);
 
+	// Consultoras --------------------------------
+
 	static bool existe(const unsigned int pid, const string& id);
+
+	// Output --------------------------------
 
 	static void imprimirTodo();
 	void imprimir();

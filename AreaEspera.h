@@ -12,7 +12,18 @@ public:
 	AreaEspera();
 	~AreaEspera();	
 
+	// Prioridades ------------------------------
+
 	void altaPrioridad();
 	void bajaPrioridad();
+
+	// Procesos ---------------------------------
+
 	void altaProceso();
+	// void enviaProcesos(cluster);
+
+	// Output -----------------------------------
+
+	void imprimirPrioridad() const;
+	void imprimir() const;
 };

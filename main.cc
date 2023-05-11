@@ -39,12 +39,15 @@ int main() {
 	  else if (cmd == "avanzar_tiempo" or cmd == "at") {
 	  	cluster.avanzaTiempo();
 	  }
+	  */
 	  else if (cmd == "imprimir_prioridad" or cmd == "ipri") {
-	  	areaEspera.imprimePrioridad();
+	  	areaEspera.imprimirPrioridad();
 	  }
+	  
 	  else if (cmd == "imprimir_area_espera" or cmd == "iae") {
 	  	areaEspera.imprimir();
 	  }
+	  /*
 	  else if (cmd == "imprimir_procesador" or cmd == "ipro") {
 	  	cluster.imprimirProcesador();
 	  }
