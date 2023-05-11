@@ -31,3 +31,19 @@ void AreaEspera::bajaPrioridad() {
 		Prioridad::imprimirTodo();
 	}
 }
+
+void AreaEspera::altaProceso() {
+	unsigned int pid, memoria_estimada, ttl_estimado;
+	string idPrioridad;
+	cin >> pid >> memoria_estimada >> ttl_estimado >> idPrioridad;
+
+	if (not Prioridad::existe(idPrioridad)) {
+		cout << "La prioridad no existe" << endl;
+	}
+	else {
+		Prioridad *p = Prioridad::getPrioridad(idPrioridad);
+		p->altaProceso(pid, memoria_estimada, ttl_estimado);
+	}
+}
+
+

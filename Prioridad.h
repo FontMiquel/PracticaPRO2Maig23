@@ -1,8 +1,9 @@
 #include <iostream>
 #include <map>
 #include <set>
-#include "ProcesoPendiente.h"
 using namespace std;
+
+class ProcesoPendiente;
 
 class Prioridad {
 private:
@@ -21,6 +22,9 @@ public:
 
 	static Prioridad* alta(const string& id);
 	void baja();
+
+	void altaProceso(const unsigned int pid, const unsigned int memoria_estimada,
+					 const unsigned int ttl_estimado);
 
 	static bool existe(const string& id);
 	static Prioridad* getPrioridad(const string& id);

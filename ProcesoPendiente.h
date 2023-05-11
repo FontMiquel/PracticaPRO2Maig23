@@ -1,18 +1,23 @@
-#include "Proceso.h"
+#include <iostream>
+#include <map>
 using namespace std;
 
-class Prioridad;
+#include "Proceso.h"
 
 class ProcesoPendiente : public Proceso {
 private:
-	//Relaciones
-	Prioridad* prioridad;
-
 	//Clave externa: pid + Prioridad::id
 	static map<pair<int,string>, ProcesoPendiente> procesosPendientes; 
 
 public:
-	ProcesoPendiente();
+	ProcesoPendiente() : Proceso() {};
 	~ProcesoPendiente();
 	
+	static ProcesoPendiente* alta(const unsigned int pid, const unsigned int memoria_estimada,
+					 	   		  const unsigned int ttl_estimado, const string& idPrioridad);
+
+	static bool existe(const unsigned int pid, const string& id);
+
+	static void imprimirTodo();
+	void imprimir();
 };

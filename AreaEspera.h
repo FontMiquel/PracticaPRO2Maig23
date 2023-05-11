@@ -14,4 +14,5 @@ public:
 
 	void altaPrioridad();
 	void bajaPrioridad();
+	void altaProceso();
 };

@@ -1,4 +1,5 @@
 #include "Prioridad.h"
+#include "ProcesoPendiente.h"
 
 map<string, Prioridad> Prioridad::prioridades;
 
@@ -12,9 +13,20 @@ Prioridad* Prioridad::alta(const string& id) {
 	return &prioridades[id];
 }
 
-
 void Prioridad::baja() {
 	prioridades.erase(id);
+}
+
+void Prioridad::altaProceso(const unsigned int pid, const unsigned int memoria_estimada,
+					 		const unsigned int ttl_estimado) {
+	if (ProcesoPendiente::existe(pid, id)) {
+		cout << "El proceso ya existe" << endl;
+	}
+	else {
+		ProcesoPendiente *p = ProcesoPendiente::alta(pid, memoria_estimada, ttl_estimado, id);
+		procesosPendientes.insert(p);
+		ProcesoPendiente::imprimirTodo();
+	}
 }
 
 bool Prioridad::existe(const string& id) {
